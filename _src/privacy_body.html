@@ -1,0 +1,119 @@
+<h1>Privacy Policy</h1>
+<p class="meta">Effective 16 September 2026 &middot; Version 2026-09-16</p>
+
+<p class="lede">keep. is a place to write down what you are about to do, focus on it, and then reflect on how it went. What you write in it is the most personal thing this app touches, so this page says plainly what is stored, where it lives, who can reach it, and how to take it back or leave.</p>
+
+<div class="panel">
+  <h3>The short version</h3>
+  <ul>
+    <li>Your Keeps, reflections, moods and check-ins are stored so they can sync to your other devices. Nobody else can read them.</li>
+    <li>There is no advertising in keep., no ad identifiers, and no third-party trackers. Your writing is never sold or shared for marketing.</li>
+    <li>Usage analytics are <strong>off</strong> until you turn them on, and even then they can never carry the text you wrote.</li>
+    <li>You can export everything you have ever written, as JSON and CSV, from Settings. It is a right, not a paid feature.</li>
+    <li>You can delete your account from Settings. It is a real deletion, not a flag on a row.</li>
+  </ul>
+</div>
+
+<h2>Who is responsible for your data</h2>
+<p>keep. is built and run by <strong>Pawan Kumar</strong>, an individual developer based in India, acting as the data fiduciary under India&rsquo;s Digital Personal Data Protection Act, 2023, and as the data controller under the EU and UK GDPR where those apply to you.</p>
+<p>For anything about your data, including requests and complaints, write to <a href="mailto:erpawankumar0007@gmail.com">erpawankumar0007@gmail.com</a>.</p>
+
+<h2>What keep. collects</h2>
+<p>Everything below is either something you typed, something needed to keep your account working, or something needed to sync your writing between your own devices. There is nothing collected &ldquo;just in case&rdquo;.</p>
+
+<h3>Your account</h3>
+<p>You sign in with an email link, with Google, or with Apple. keep. stores the email address associated with that sign-in. If you use Apple&rsquo;s Hide My Email, the relay address is all that is ever received &mdash; your real address is never seen. Passwords are never used and never stored.</p>
+
+<h3>Your profile</h3>
+<p>A display name (which starts as &ldquo;Friend&rdquo; until you change it), your time zone, and your language. The time zone is read from your device once when the account is created, and is used to decide which day a Keep belongs to &mdash; which is what makes streaks and day summaries correct.</p>
+
+<h3>What you write</h3>
+<p>This is the heart of the app, and the part treated most carefully:</p>
+<ul>
+  <li>The task you write on a Keep, up to 500 characters.</li>
+  <li>Your reflection after a session &mdash; what you accomplished and what remains, up to 4,000 characters each &mdash; along with the mood you picked and, if a session ended early, the reason you chose.</li>
+  <li>Your daily check-in mood and note, up to 2,000 characters.</li>
+  <li>The names of your Promises and Tags.</li>
+</ul>
+<p>This text is stored so it can appear on your other devices and in your export. It is not read, mined, or used to train anything. There are no AI features in keep. today; if that ever changes, it will be a separate opt-in that names the provider, and it will be off until you say yes.</p>
+
+<h3>Facts about each session</h3>
+<p>How long you planned to focus, how long you actually did, when the session started and ended, which day it belongs to, whether it completed or was interrupted.</p>
+
+<h3>Your device</h3>
+<p>When the app first syncs, it registers the device so your Keeps can be attributed to where they were created. That record holds a random identifier generated on the device, whether it is iOS or Android, and the app version. It does not include your name, your phone number, your IMEI, an advertising identifier, or a push notification token.</p>
+
+<h3>Your consent history</h3>
+<p>Each time you grant or withdraw a consent, an entry is added to an append-only record: which consent, whether it was granted or withdrawn, which version of this policy was in force, and when. This exists so that &ldquo;what did I actually agree to, and when?&rdquo; has an honest answer years later. It is included in your export.</p>
+
+<h3>Subscription status</h3>
+<p>keep.+ is not yet available for purchase. When it is, whether your subscription is active will be stored. Payment itself happens through the App Store or Google Play &mdash; your card details never reach keep. and are never seen.</p>
+
+<h3>Usage analytics, only if you turn them on</h3>
+<p>Analytics are <strong>off by default, everywhere</strong>, not only in regions that require it. If you switch them on in Settings, keep. records structural facts about how the app is used &mdash; that a Keep was created, that a reflection was saved, which screen was opened &mdash; so that rough edges can be found without asking you.</p>
+<p>What you wrote can never be part of that. The analytics layer carries a hard block list covering task text, reflections, check-in notes, journal text, names and email addresses, and it drops any value longer than 64 characters on the grounds that long text is free text by definition. In development the block raises an error rather than passing silently, so a well-meaning change six months from now cannot quietly start leaking your writing.</p>
+
+<h2>What keep. never collects</h2>
+<ul>
+  <li>Your location. The app never asks for it and has no location code in it.</li>
+  <li>Your contacts, photos, camera, microphone, calendar, or health data.</li>
+  <li>Advertising identifiers such as the IDFA, and any form of ad or attribution SDK.</li>
+  <li>Push notification tokens. Timer alerts are scheduled locally on your device; remote push is deliberately switched off in the build, so keep. cannot send you a notification even if it wanted to.</li>
+  <li>Anything at all about people who are not you. keep. has no social features and no contact upload.</li>
+</ul>
+
+<h2>Where your data lives</h2>
+<p>Your writing is stored twice: in a database on your own device, so the app works with no connection at all, and in a hosted database so it can reach your other devices.</p>
+<p>The hosted side runs on <strong>Supabase</strong>, on Amazon Web Services in the <code>ap-south-1</code> region (Mumbai, India). This is a single region &mdash; your data is stored in India regardless of where you are. Everything travelling between your device and that database goes over an encrypted connection.</p>
+<p>Row-level security is enforced in the database itself, scoped to your user id, so one account cannot read another account&rsquo;s rows even if application code were to ask for them.</p>
+
+<h2>Who else touches your data</h2>
+<p>These are the services keep. relies on. Each one only receives what it needs to do its job.</p>
+<div class="tablewrap">
+<table>
+  <thead><tr><th>Service</th><th>What it does</th><th>When</th></tr></thead>
+  <tbody>
+    <tr><td>Supabase (AWS, Mumbai)</td><td>Database, sign-in, and the server functions behind sync, export and deletion</td><td>Always</td></tr>
+    <tr><td>Apple</td><td>Sign in with Apple</td><td>Only if you sign in that way</td></tr>
+    <tr><td>Google</td><td>Sign in with Google</td><td>Only if you sign in that way</td></tr>
+    <tr><td>Expo (EAS)</td><td>Delivers app updates. Checking for one reveals your IP address and app version to Expo</td><td>On app start</td></tr>
+    <tr><td>PostHog</td><td>Usage analytics</td><td>Only if you turn analytics on</td></tr>
+    <tr><td>RevenueCat</td><td>Subscription status for keep.+</td><td>Not active yet</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Your writing is never sold, rented, or handed to advertisers or data brokers. It may be disclosed if the law genuinely requires it &mdash; a valid court order, for instance &mdash; and where it is lawful to tell you, you will be told.</p>
+
+<h2>How long it is kept</h2>
+<p>Your Keeps and reflections stay for as long as your account exists, because a record of your own work that quietly expires would defeat the point of the app.</p>
+<p>When you delete your account from Settings, deletion is scheduled with a <strong>7-day grace period</strong>, which you can cancel from the same screen if you change your mind. After that window the deletion is permanent and cascades through everything: your profile, Promises, Keeps, reflections, check-ins, day summaries, devices and consent records. Nothing is kept as a disabled row.</p>
+<p>Encrypted backups of the database may still hold your data for up to 30 days after that, until they age out on their own schedule. That is stated plainly here rather than claimed as instant erasure everywhere, because instant erasure everywhere would not be true.</p>
+
+<h2>Your rights</h2>
+<p>Under India&rsquo;s DPDP Act, and under the GDPR if you are in the EEA or UK, you have the rights below. Most of them are buttons in the app rather than a request you have to make.</p>
+<ul>
+  <li><strong>Get a copy of everything.</strong> Settings &rarr; Export your data produces a complete archive &mdash; your profile, every Keep, every reflection, your check-ins, Promises, day summaries, consent history and subscription state as JSON, plus a CSV of your Keeps joined to their reflections that opens in any spreadsheet. The download link is valid for 72 hours.</li>
+  <li><strong>Correct what is wrong.</strong> Your writing is editable in the app; write to the address above for anything you cannot reach yourself.</li>
+  <li><strong>Delete it.</strong> Settings &rarr; Delete account, as described above.</li>
+  <li><strong>Withdraw consent.</strong> Analytics can be switched off in Settings at any time, and collection stops immediately. Cloud storage cannot be withdrawn while the account exists, because sign-in is required to use keep. at all and storing your data is inherent to having an account &mdash; deleting the account is the way to withdraw it, which is why it is said here up front rather than buried.</li>
+  <li><strong>Nominate someone</strong> to exercise these rights on your behalf if you die or become incapacitated, as the DPDP Act provides. Write to the address above.</li>
+  <li><strong>Complain.</strong> Please write to me first &mdash; it is one person and you will get a real answer. If that does not resolve it, you can approach the Data Protection Board of India, or your local supervisory authority if you are in the EEA or UK.</li>
+</ul>
+
+<h2>Security</h2>
+<p>Sign-in tokens are held in your device&rsquo;s secure keychain rather than ordinary storage. Every database query is constrained by row-level security tied to your user id. Connections are encrypted in transit. The analytics block list described above is enforced in code rather than by convention.</p>
+<p>No system is perfect, and it would be dishonest to promise otherwise. If a breach ever affects your data, you will be told, and so will the relevant authority, within the timeframes the law requires.</p>
+
+<h2>Children</h2>
+<p>keep. is not intended for anyone under 18, and accounts should not be created by or for them. If you believe a child has created an account, write to the address above and it will be deleted.</p>
+
+<h2>Beta</h2>
+<p>keep. is currently in beta testing. The app is still changing, and features described here may move or be replaced. Your data rights do not change with it &mdash; export and deletion work the same in beta as they will at launch.</p>
+
+<h2>Changes to this policy</h2>
+<p>If this policy changes in a way that affects you, the new version will be shown in the app and you will be asked to acknowledge it before continuing. Every version you have agreed to is recorded with its date, and appears in your export.</p>
+
+<h2>Contact</h2>
+<p>Pawan Kumar<br>
+<a href="mailto:erpawankumar0007@gmail.com">erpawankumar0007@gmail.com</a><br>
+India</p>

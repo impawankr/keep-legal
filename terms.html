@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>keep. — Terms of Use</title>
+<meta name="description" content="The agreement between you and keep. — your content, the beta, keep.+ and how to leave.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600&display=swap">
+<style>
+  :root {
+    --bg: #F7F1E5; --surface: #FFF9EE; --surface-alt: #F1E6D2;
+    --ink: #292A25; --ink-soft: #716F66; --border: #DED4C2;
+    --primary: #63785A; --primary-dark: #3F5140; --peach: #EFA68D;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1C1E1B; --surface: #242723; --surface-alt: #2C302B;
+      --ink: #E8E6DF; --ink-soft: #A09C92; --border: #3A3E38;
+      --primary: #9FB292; --primary-dark: #C3D2B8; --peach: #E0A088;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #1C1E1B; --surface: #242723; --surface-alt: #2C302B;
+    --ink: #E8E6DF; --ink-soft: #A09C92; --border: #3A3E38;
+    --primary: #9FB292; --primary-dark: #C3D2B8; --peach: #E0A088;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 16.5px; line-height: 1.68;
+    -webkit-font-smoothing: antialiased;
+  }
+  header.site {
+    border-bottom: 1px solid var(--border); background: var(--surface);
+  }
+  .bar {
+    max-width: 760px; margin: 0 auto; padding: 18px 20px;
+    display: flex; align-items: baseline; justify-content: space-between; gap: 16px;
+  }
+  .wordmark {
+    font-family: Poppins, sans-serif; font-weight: 600; font-size: 20px;
+    color: var(--ink); text-decoration: none; letter-spacing: -0.01em;
+  }
+  .wordmark span { color: var(--primary); }
+  nav { display: flex; gap: 18px; }
+  nav a {
+    font-size: 14.5px; color: var(--ink-soft); text-decoration: none;
+    border-bottom: 1px solid transparent; padding-bottom: 2px;
+  }
+  nav a:hover, nav a:focus-visible { color: var(--ink); border-bottom-color: var(--peach); }
+  nav a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--primary); }
+  main { max-width: 760px; margin: 0 auto; padding: 44px 20px 96px; }
+  h1 {
+    font-family: Poppins, sans-serif; font-weight: 600; font-size: 34px;
+    line-height: 1.22; margin: 0 0 10px; letter-spacing: -0.015em; text-wrap: balance;
+  }
+  .meta {
+    color: var(--ink-soft); font-size: 14.5px; margin: 0 0 8px;
+    font-variant-numeric: tabular-nums;
+  }
+  .lede { font-size: 18px; color: var(--ink); margin: 22px 0 0; }
+  h2 {
+    font-family: Poppins, sans-serif; font-weight: 600; font-size: 21px;
+    margin: 46px 0 12px; letter-spacing: -0.01em; text-wrap: balance;
+  }
+  h3 {
+    font-family: Poppins, sans-serif; font-weight: 600; font-size: 16.5px;
+    margin: 28px 0 8px; color: var(--ink);
+  }
+  p { margin: 0 0 16px; }
+  ul { margin: 0 0 16px; padding-left: 22px; }
+  li { margin-bottom: 9px; }
+  a { color: var(--primary-dark); text-underline-offset: 2px; }
+  strong { font-weight: 600; }
+  code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.88em; background: var(--surface-alt);
+    padding: 1px 5px; border-radius: 4px;
+  }
+  .panel {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 9px; padding: 20px 22px; margin: 26px 0;
+  }
+  .panel p:last-child, .panel ul:last-child { margin-bottom: 0; }
+  .panel h3:first-child { margin-top: 0; }
+  .tablewrap { overflow-x: auto; margin: 0 0 20px; }
+  table { border-collapse: collapse; width: 100%; font-size: 15px; }
+  th, td {
+    text-align: left; padding: 10px 12px;
+    border-bottom: 1px solid var(--border); vertical-align: top;
+  }
+  th {
+    font-family: Poppins, sans-serif; font-weight: 600; font-size: 13px;
+    letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink-soft);
+  }
+  footer.site {
+    border-top: 1px solid var(--border); color: var(--ink-soft);
+    font-size: 14.5px; padding: 26px 20px 60px;
+  }
+  footer.site div { max-width: 760px; margin: 0 auto; }
+  @media (max-width: 560px) {
+    h1 { font-size: 28px; }
+    main { padding: 32px 20px 72px; }
+  }
+</style>
+
+</head>
+<body>
+<header class="site">
+  <div class="bar">
+    <a class="wordmark" href="index.html">keep<span>.</span></a>
+    <nav>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html" aria-current="page">Terms</a>
+    </nav>
+  </div>
+</header>
+<main>
+<h1>Terms of Use</h1>
+<p class="meta">Effective 16 September 2026 &middot; Version 2026-09-16</p>
+
+<p class="lede">These terms are the agreement between you and the person who makes keep. They are written to be read, not to be skipped, so they are kept as short as honesty allows.</p>
+
+<div class="panel">
+  <h3>The short version</h3>
+  <ul>
+    <li>What you write in keep. is yours. It is stored so it can sync to your devices, and for nothing else.</li>
+    <li>keep. is in beta. It will have bugs, it will change, and you should not rely on it as your only copy of anything important.</li>
+    <li>keep. is a focus and reflection tool. It is not therapy, and it is not medical advice.</li>
+    <li>You can leave whenever you like, take everything with you, and delete the rest.</li>
+  </ul>
+</div>
+
+<h2>Who this agreement is with</h2>
+<p>keep. is made and operated by <strong>Pawan Kumar</strong>, an individual developer based in India (&ldquo;I&rdquo;, &ldquo;me&rdquo;). By creating an account or using the app, you agree to these terms. If you do not agree to them, please do not use keep.</p>
+
+<h2>Who can use it</h2>
+<p>You must be at least 18 years old to use keep. By signing in you confirm that you are.</p>
+
+<h2>Your account</h2>
+<p>You sign in with an email link, with Google, or with Apple. You are responsible for keeping access to that email account or sign-in provider secure, because anyone who controls it can reach your Keeps. There are no passwords in keep. to lose or reuse.</p>
+<p>One account is meant for one person. Please do not share yours.</p>
+
+<h2>keep. is in beta</h2>
+<p>This is pre-release software being tested. That has real consequences and they are worth stating plainly rather than hiding in a disclaimer at the bottom:</p>
+<ul>
+  <li>Features will change, move, or be removed entirely between builds.</li>
+  <li>Bugs are expected, including ones that have not been found yet.</li>
+  <li>Data loss is possible. Your writing is backed up and synced, but beta software is beta software &mdash; if something matters enough that losing it would hurt, export it (Settings &rarr; Export your data) and keep your own copy.</li>
+  <li>There is no uptime guarantee, no support commitment, and no promise that the beta continues.</li>
+</ul>
+
+<h2>What you write stays yours</h2>
+<p>You own everything you write in keep. &mdash; your tasks, reflections, check-ins, Promise names, all of it. Nothing in these terms transfers ownership of it.</p>
+<p>To run the app, you grant a narrow, revocable permission to store your content, back it up, and transmit it between your own devices. That permission exists purely to make the app work. Your writing is not used to train models, not analysed to build a profile of you, not shown to anyone else, and not sold. It ends when you delete your content or your account.</p>
+<p>There are no AI features in keep. today. If any are added, they will be a separate opt-in that names the provider and stays off until you switch it on.</p>
+
+<h2>Using keep. reasonably</h2>
+<p>Please do not use keep. to store or transmit anything unlawful, to attack or overload the service, to try to reach another person&rsquo;s data, to reverse engineer or resell it, or to automate account creation. These are the ordinary limits and they are here so that abuse has a name.</p>
+
+<h2>keep.+</h2>
+<p>keep.+ is the planned paid tier. <strong>It is not available for purchase during the beta</strong>, and nothing in the app currently charges you.</p>
+<p>When it does become available, subscriptions will be sold through the App Store or Google Play. Those platforms handle the payment, the renewal, and the receipt &mdash; your payment details are theirs, never mine, and I never see them. A subscription renews automatically until you cancel it, and you cancel or manage it in your Apple or Google account settings rather than here. Refunds are handled under the policy of whichever store you bought it from.</p>
+<p>The free tier is not a trial. Creating Keeps and reading back everything you have written are not gated, and will not become gated.</p>
+
+<h2>keep. is not medical or mental-health advice</h2>
+<p>keep. asks how you are feeling and gives back observations drawn from what you recorded. That is a reflection tool, not a clinical one. It does not diagnose anything, it is not therapy, and it is not a substitute for a doctor, therapist, or counsellor. If you are struggling, please talk to a qualified professional or someone you trust. If you are in crisis, contact your local emergency services.</p>
+
+<h2>Availability</h2>
+<p>keep. works offline by design, so the app itself keeps working without a connection. Syncing, export, and account deletion need the server, and the server may be unavailable for maintenance or for reasons outside my control. No particular level of availability is promised.</p>
+
+<h2>Ending it</h2>
+<p>You can stop using keep. at any time, and delete your account from Settings. Deletion is scheduled with a 7-day grace period, is cancellable within it, and is permanent afterwards. Export your data first if you want to keep it.</p>
+<p>I may suspend or end an account that is being used to break these terms, to harm the service, or to reach someone else&rsquo;s data. Where it is reasonable to warn you first, I will.</p>
+
+<h2>Disclaimers and limits</h2>
+<p>keep. is provided &ldquo;as is&rdquo; and, particularly as a beta, without warranties of any kind &mdash; that it will be uninterrupted, error-free, or fit for a particular purpose.</p>
+<p>To the extent the law allows, I am not liable for indirect or consequential losses, lost profits, or lost data arising from your use of keep. Where liability cannot be excluded, it is limited to the greater of the amount you have paid for keep. in the twelve months before the claim, or 1,000 rupees.</p>
+<p>None of this affects rights you have under consumer protection law that cannot be waived by agreement. If a provision of these terms is unenforceable where you live, the rest still applies.</p>
+
+<h2>Changes to these terms</h2>
+<p>If these terms change materially, you will be told in the app before the change takes effect, and each version you have accepted is recorded with its date. Continuing to use keep. after that means you accept the new version.</p>
+
+<h2>Governing law</h2>
+<p>These terms are governed by the laws of India, and the competent courts in India will have jurisdiction over any dispute. If you are a consumer elsewhere, you keep the benefit of any mandatory protections of your own country&rsquo;s law.</p>
+
+<h2>Contact</h2>
+<p>Pawan Kumar<br>
+<a href="mailto:erpawankumar0007@gmail.com">erpawankumar0007@gmail.com</a><br>
+India</p>
+
+<p>See also the <a href="privacy.html">Privacy Policy</a>, which explains what is stored and how to take it back.</p>
+
+</main>
+<footer class="site"><div>keep. &middot; Pawan Kumar &middot; <a href="mailto:erpawankumar0007@gmail.com">erpawankumar0007@gmail.com</a></div></footer>
+</body>
+</html>
