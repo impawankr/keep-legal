@@ -3,7 +3,9 @@
 Static Privacy Policy and Terms of Use for the keep. app, ready to publish
 on GitHub Pages.
 
-- `index.html` — landing page linking to both documents
+- `index.html` — keepomo.com home page: what keep. is, the ritual, Grow, keep.+ and privacy, with CSS-animated app screens (no JavaScript)
+- `legal.html` — index of the legal documents
+- `support.html` — Support page
 - `privacy.html` — Privacy Policy (version 2026-09-16)
 - `terms.html` — Terms of Use (version 2026-09-16)
 - `_src/` — the body text and shared stylesheet the pages were built from
