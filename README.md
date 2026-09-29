@@ -6,8 +6,8 @@ on GitHub Pages.
 - `index.html` — keepomo.com home page (minimal placeholder until launch)
 - `legal.html` — index of the legal documents
 - `support.html` — Support page
-- `privacy.html` — Privacy Policy (version 2026-09-16)
-- `terms.html` — Terms of Use (version 2026-09-16)
+- `privacy.html` — Privacy Policy (version 2026-09-29)
+- `terms.html` — Terms of Use (version 2026-09-29)
 - `_src/` — the body text and shared stylesheet the pages were built from
 - `.nojekyll` — tells GitHub Pages to serve the files as-is
 
@@ -47,7 +47,7 @@ The pages link to each other with relative paths, so they work at any URL.
 
 ## Updating
 
-Both documents carry a version string (`2026-09-16`) that matches
+Both documents carry a version string (`2026-09-29`) that matches
 `POLICY_VERSION` in the app. The consent ledger records that string against
 every grant, so **if you change either document materially, bump the version
 in both places** — otherwise the ledger claims people agreed to text they

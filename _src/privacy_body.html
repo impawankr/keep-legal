@@ -1,5 +1,5 @@
 <h1>Privacy Policy</h1>
-<p class="meta">Effective 16 September 2026 &middot; Version 2026-09-16</p>
+<p class="meta">Effective 29 September 2026 &middot; Version 2026-09-29</p>
 
 <p class="lede">keep. is a place to write down what you are about to do, focus on it, and then reflect on how it went. What you write in it is the most personal thing this app touches, so this page says plainly what is stored, where it lives, who can reach it, and how to take it back or leave.</p>
 
@@ -53,6 +53,10 @@
 <p>Analytics are <strong>off by default, everywhere</strong>, not only in regions that require it. If you switch them on in Settings, keep. records structural facts about how the app is used &mdash; that a Keep was created, that a reflection was saved, which screen was opened &mdash; so that rough edges can be found without asking you.</p>
 <p>What you wrote can never be part of that. The analytics layer carries a hard block list covering task text, reflections, check-in notes, journal text, names and email addresses, and it drops any value longer than 64 characters on the grounds that long text is free text by definition. In development the block raises an error rather than passing silently, so a well-meaning change six months from now cannot quietly start leaking your writing.</p>
 
+<h3>Crash reports</h3>
+<p>If the app crashes or hits an unexpected error, a crash report is sent to <strong>Sentry</strong>, stored in the European Union, so the problem can be found and fixed. A report says <em>where</em> the app broke: the error, the line of code, the app version, the phone model and operating system version, and a short trail of the app&rsquo;s own steps before it (for example, &ldquo;opened the focus screen&rdquo;).</p>
+<p>A report never includes your name, your email, your account id, anything you wrote, a screenshot, or your device&rsquo;s name. Console logs and the labels of what you tapped are removed before anything leaves your phone, and error messages are cut short. Crash reports are on by default because a crash nobody reports is a crash nobody fixes; you can turn them off at any time in <strong>Settings &rarr; Privacy &rarr; Crash reports</strong>, and once off, the reporting tool does not start at all.</p>
+
 <h2>What keep. never collects</h2>
 <ul>
   <li>Your location. The app never asks for it and has no location code in it.</li>
@@ -78,6 +82,7 @@
     <tr><td>Google</td><td>Sign in with Google</td><td>Only if you sign in that way</td></tr>
     <tr><td>Expo (EAS)</td><td>Delivers app updates. Checking for one reveals your IP address and app version to Expo</td><td>On app start</td></tr>
     <tr><td>PostHog</td><td>Usage analytics</td><td>Only if you turn analytics on</td></tr>
+    <tr><td>Sentry (EU)</td><td>Crash reports: where the app broke, never what you wrote</td><td>When the app crashes, unless you turn crash reports off</td></tr>
     <tr><td>RevenueCat</td><td>Subscription status for keep.+</td><td>Not active yet</td></tr>
   </tbody>
 </table>
