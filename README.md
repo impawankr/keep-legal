@@ -6,6 +6,7 @@ on GitHub Pages.
 - `index.html` — keepomo.com home page (minimal placeholder until launch)
 - `legal.html` — index of the legal documents
 - `support.html` — Support page
+- `app.html` — keepomo.com/app, the download link on shared cards (iPhone goes straight to the App Store)
 - `privacy.html` — Privacy Policy (version 2026-09-29)
 - `terms.html` — Terms of Use (version 2026-09-29)
 - `_src/` — the body text and shared stylesheet the pages were built from
