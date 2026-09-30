@@ -12,14 +12,14 @@
 <meta property="og:image" content="https://keepomo.com/app-icon.png">
 <meta name="apple-itunes-app" content="app-id=6812776268">
 <meta name="theme-color" content="#F7F1E5" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#1B2027" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#161C17" media="(prefers-color-scheme: dark)">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Literata:ital,wght@0,400;1,400&family=Nunito:wght@600;700&family=Poppins:wght@600&display=swap">
 <style>
-  /* ── Tokens: Cozy Paper by day, Starlit Indigo by night (the app's own) ── */
+  /* ── Tokens: Cozy Paper by day; a forest night built from the same greens ── */
   :root {
     --bg: #F7F1E5; --surface: #FFF9EE; --surface-alt: #F1E6D2; --band: #EFE5D2;
     --ink: #292A25; --ink-soft: #716F66; --border: #DED4C2; --rule: #E9DFCC;
@@ -33,21 +33,21 @@
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-      --bg: #1B2027; --surface: #232935; --surface-alt: #2B3240; --band: #20262F;
-      --ink: #E9E7E0; --ink-soft: #A9AFBB; --border: #333B48; --rule: #2F3642;
+      --bg: #161C17; --surface: #1E2620; --surface-alt: #273029; --band: #1A211B;
+      --ink: #E8E6DC; --ink-soft: #A7B0A1; --border: #313B33; --rule: #2A332C;
       --primary: #A8C49A; --primary-dark: #CFE0C4; --primary-soft: rgba(168,196,154,.16);
-      --sage: #7E93A0; --beige: #5C6472; --peach: #F4C77A; --peach-soft: rgba(244,199,122,.16);
-      --on-primary: #1B2027; --night: #11151B;
+      --sage: #7C8B6E; --beige: #5E5A48; --peach: #F0B27C; --peach-soft: rgba(240,178,124,.16);
+      --on-primary: #161C17; --night: #0F1410;
       --shadow: 0 1px 2px rgba(0,0,0,.3), 0 18px 40px rgba(0,0,0,.4);
       --shadow-sm: 0 1px 2px rgba(0,0,0,.3), 0 6px 16px rgba(0,0,0,.3);
     }
   }
   :root[data-theme="dark"] {
-    --bg: #1B2027; --surface: #232935; --surface-alt: #2B3240; --band: #20262F;
-    --ink: #E9E7E0; --ink-soft: #A9AFBB; --border: #333B48; --rule: #2F3642;
+    --bg: #161C17; --surface: #1E2620; --surface-alt: #273029; --band: #1A211B;
+    --ink: #E8E6DC; --ink-soft: #A7B0A1; --border: #313B33; --rule: #2A332C;
     --primary: #A8C49A; --primary-dark: #CFE0C4; --primary-soft: rgba(168,196,154,.16);
-    --sage: #7E93A0; --beige: #5C6472; --peach: #F4C77A; --peach-soft: rgba(244,199,122,.16);
-    --on-primary: #1B2027; --night: #11151B;
+    --sage: #7C8B6E; --beige: #5E5A48; --peach: #F0B27C; --peach-soft: rgba(240,178,124,.16);
+    --on-primary: #161C17; --night: #0F1410;
     --shadow: 0 1px 2px rgba(0,0,0,.3), 0 18px 40px rgba(0,0,0,.4);
     --shadow-sm: 0 1px 2px rgba(0,0,0,.3), 0 6px 16px rgba(0,0,0,.3);
   }
@@ -205,6 +205,34 @@
   .guide.in li:nth-child(2) { animation-delay: .08s; } .guide.in li:nth-child(3) { animation-delay: .16s; } .guide.in li:nth-child(4) { animation-delay: .24s; } .guide.in li:nth-child(5) { animation-delay: .32s; } .guide.in li:nth-child(6) { animation-delay: .4s; }
   @media (max-width: 960px) { .guide { grid-template-columns: 1fr; } }
 
+  /* Promises & Tags */
+  .story { display: grid; grid-template-columns: 1fr 1.25fr; gap: 48px; align-items: center; }
+  .why { display: grid; gap: 22px; }
+  .why .def { display: grid; grid-template-columns: 44px 1fr; gap: 14px; align-items: start; }
+  .why .ic { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; background: var(--primary-soft); font-family: Poppins, sans-serif; color: var(--primary-dark); }
+  .why .ic.t { background: var(--peach-soft); }
+  .why p { margin: 0; color: var(--ink-soft); font-size: 15.5px; }
+  .aria { font-family: Literata, Georgia, serif; font-style: italic; font-size: 17px; color: var(--ink); border-left: 2px solid var(--peach); padding-left: 16px; margin: 0; }
+  .board { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; box-shadow: var(--shadow); padding: 22px; }
+  .tagbar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 18px; font-size: 13px; color: var(--ink-soft); }
+  .tagbar .tg { font-size: 12.5px; font-weight: 500; padding: 5px 12px; border-radius: 999px; border: 1px solid var(--border); background: var(--surface); color: var(--ink); cursor: pointer; font-family: inherit; transition: background .3s, border-color .3s; }
+  .tagbar .tg:before { content: ""; display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--peach); margin-right: 7px; vertical-align: 1px; }
+  .tagbar .tg[aria-pressed="true"] { background: var(--peach-soft); border-color: var(--peach); }
+  .lanes { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .lane h4 { display: flex; align-items: center; gap: 8px; margin: 0 0 10px; font-family: Poppins, sans-serif; font-weight: 600; font-size: 14.5px; }
+  .lane h4 i { width: 10px; height: 10px; border-radius: 50%; background: var(--primary); }
+  .lane h4 small { font-family: Inter, sans-serif; font-weight: 400; color: var(--ink-soft); font-size: 12px; margin-left: auto; }
+  .kp { display: flex; align-items: center; gap: 8px; padding: 9px 11px; margin-bottom: 8px; border-radius: 9px; border: 1px solid var(--border); background: var(--bg); font-family: Literata, Georgia, serif; font-size: 14px; transition: opacity .45s ease, transform .45s ease, box-shadow .45s ease, border-color .45s; }
+  .kp span { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .kp em { font-family: Inter, sans-serif; font-style: normal; font-size: 11px; padding: 2px 8px; border-radius: 999px; background: var(--peach-soft); color: var(--ink); white-space: nowrap; }
+  .board[data-tag] .kp { opacity: .32; }
+  .board[data-tag="morning"] .kp[data-tags~="morning"], .board[data-tag="maya"] .kp[data-tags~="maya"], .board[data-tag="deep"] .kp[data-tags~="deep"] { opacity: 1; transform: translateX(4px); border-color: var(--peach); box-shadow: 0 6px 16px rgba(239,166,141,.18); }
+  .insight { display: flex; gap: 10px; align-items: center; margin-top: 14px; padding: 12px 14px; border-radius: 12px; background: var(--primary-soft); font-size: 14.5px; min-height: 48px; }
+  .insight img { width: 30px; height: 30px; flex: none; }
+  .in .kp { animation: rise .6s ease both; animation-delay: calc(var(--i) * 90ms); }
+  @media (max-width: 960px) { .story { grid-template-columns: 1fr; } }
+  @media (max-width: 520px) { .lanes { grid-template-columns: 1fr; } }
+
   /* Free */
   .free { display: grid; grid-template-columns: 1.1fr 1fr 1fr; gap: 18px; }
   .tile { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; min-height: 100%; }
@@ -247,13 +275,15 @@
   .bento { display: grid; grid-template-columns: repeat(6, 1fr); gap: 18px; }
   .b-sun { grid-column: span 4; } .b-jar { grid-column: span 2; } .b-road { grid-column: span 3; } .b-beads { grid-column: span 3; } .b-echo { grid-column: span 3; } .b-weather { grid-column: span 3; }
   .bento .tile p { margin-bottom: 14px; }
-  .sun svg { width: 100%; height: auto; display: block; }
-  .sun .sunball { transform-box: view-box; offset-path: path("M 40 190 A 190 190 0 0 1 420 190"); offset-distance: 58%; offset-rotate: 0deg; }
-  .in .sun .sunball { animation: rise-sun 2.6s cubic-bezier(.25,.7,.25,1) .2s both; }
-  @keyframes rise-sun { from { offset-distance: 2%; } to { offset-distance: 58%; } }
+  .sun-grid { display: grid; grid-template-columns: minmax(200px, 300px) 1fr; gap: 28px; align-items: center; }
+  .sun svg { width: 100%; height: auto; display: block; overflow: visible; }
+  /* The sun rides the ring from midnight, round through the morning, to its peak. */
+  .sun .sunball { offset-path: path("M 150 254 A 104 104 0 1 1 150 46 A 104 104 0 1 1 150 254"); offset-distance: 43.75%; offset-rotate: 0deg; }
+  .in .sun .sunball { animation: rise-sun 3s cubic-bezier(.3,.6,.25,1) .2s both; }
+  @keyframes rise-sun { from { offset-distance: 0%; } to { offset-distance: 43.75%; } }
   .sun .sess { opacity: .9; }
   .in .sun .sess { animation: pop .5s ease both; animation-delay: calc(1s + var(--i) * 70ms); transform-box: fill-box; transform-origin: center; }
-  .sun-cap { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-top: 6px; }
+  .sun-cap { display: grid; gap: 2px; margin-top: 6px; }
   .sun-cap b { font-family: Poppins, sans-serif; font-weight: 600; font-size: 18px; }
   .jar { position: relative; width: 150px; height: 170px; margin: 4px auto 0; }
   .jar svg { position: absolute; inset: 0; width: 100%; height: 100%; }
@@ -315,6 +345,8 @@
     .bento { grid-template-columns: 1fr; }
     .bento > * { grid-column: auto !important; }
     .promise { grid-template-columns: 1fr; gap: 24px; }
+    .sun-grid { grid-template-columns: 1fr; }
+    .sun-grid svg { max-width: 300px; margin: 0 auto; }
   }
   @media (max-width: 520px) {
     nav.top a:not(.mini) { display: none; }
@@ -340,6 +372,7 @@
     <nav class="top" aria-label="Site">
       <a href="#ritual">The ritual</a>
       <a href="#start">Get started</a>
+      <a href="#promises">Promises</a>
       <a href="#free">Free</a>
       <a href="#plus">keep.+</a>
       <a href="#privacy">Privacy</a>
@@ -446,6 +479,43 @@
     </ol>
   </section>
 
+  <!-- ── Promises & Tags ── -->
+  <section id="promises" class="wrap">
+    <p class="kicker">Promises &amp; Tags</p>
+    <h2>A promise gives it a <em>why.</em><br>A tag shows you the <em>how.</em></h2>
+    <div class="story">
+      <div class="why reveal">
+        <p class="aria">Meet Aria. In September she made herself two promises: learn Spanish, and run her first half marathon.</p>
+        <div class="def"><div class="ic">P</div><div><h3>Promises hold the why</h3><p>A promise is something you&rsquo;re keeping to yourself. Every Keep you file under it is a step on its road &mdash; so twenty small Keeps add up to something you can see.</p></div></div>
+        <div class="def"><div class="ic t">#</div><div><h3>Tags show the how</h3><p>Tags cut across your promises: when, where, with whom. Tap one in Panda Box and a pattern appears that no single promise could show you.</p></div></div>
+      </div>
+      <div class="board reveal" id="board" aria-label="Aria&rsquo;s Keeps, filed under two promises and tagged">
+        <div class="tagbar"><span>Filter by tag</span>
+          <button class="tg" data-tag="morning" aria-pressed="false">morning</button>
+          <button class="tg" data-tag="maya" aria-pressed="false">with Maya</button>
+          <button class="tg" data-tag="deep" aria-pressed="false">deep work</button>
+        </div>
+        <div class="lanes">
+          <div class="lane">
+            <h4><i></i>Learn Spanish<small>9 Keeps</small></h4>
+            <div class="kp" style="--i:0" data-tags="morning deep"><span>Past-tense chapter</span><em>morning</em></div>
+            <div class="kp" style="--i:1" data-tags="maya"><span>Voice note to Maya</span><em>with Maya</em></div>
+            <div class="kp" style="--i:2" data-tags="morning"><span>Twenty flashcards</span><em>morning</em></div>
+            <div class="kp" style="--i:3" data-tags="deep"><span>Read one short story</span><em>deep work</em></div>
+          </div>
+          <div class="lane">
+            <h4><i style="background:var(--peach)"></i>Half marathon<small>6 Keeps</small></h4>
+            <div class="kp" style="--i:4" data-tags="morning"><span>Easy 5 km</span><em>morning</em></div>
+            <div class="kp" style="--i:5" data-tags="maya"><span>Long run, slow</span><em>with Maya</em></div>
+            <div class="kp" style="--i:6" data-tags="morning"><span>Intervals by the river</span><em>morning</em></div>
+            <div class="kp" style="--i:7" data-tags="deep"><span>Plan the next four weeks</span><em>deep work</em></div>
+          </div>
+        </div>
+        <div class="insight panda-voice"><img src="panda.png" alt=""><span id="insight">Two promises, fifteen steps. Tap a tag to see what they share.</span></div>
+      </div>
+    </div>
+  </section>
+
   <!-- ── Free ── -->
   <section id="free" class="wrap">
     <p class="kicker">keep. — free</p>
@@ -495,31 +565,38 @@
 
       <div class="bento">
         <div class="tile b-sun reveal sun">
-          <h3>Where the Sun Falls</h3>
-          <p>Every session lands on your day. The sun settles where your focus tends to fall.</p>
-          <svg viewBox="0 0 460 210" aria-hidden="true">
-            <defs>
-              <linearGradient id="skyg" x1="0" x2="1">
-                <stop offset="0" stop-color="var(--sage)" stop-opacity=".25"/>
-                <stop offset=".5" stop-color="var(--peach)" stop-opacity=".28"/>
-                <stop offset="1" stop-color="var(--primary-dark)" stop-opacity=".22"/>
-              </linearGradient>
-            </defs>
-            <path d="M 40 190 A 190 190 0 0 1 420 190 Z" fill="url(#skyg)"/>
-            <path d="M 40 190 A 190 190 0 0 1 420 190" fill="none" stroke="var(--border)" stroke-width="2" stroke-dasharray="3 6"/>
-            <line x1="20" y1="190" x2="440" y2="190" stroke="var(--border)" stroke-width="2"/>
-            <g fill="var(--primary)">
-              <circle class="sess" style="--i:0" cx="112" cy="95" r="5"/><circle class="sess" style="--i:1" cx="150" cy="62" r="6"/>
-              <circle class="sess" style="--i:2" cx="196" cy="40" r="7"/><circle class="sess" style="--i:3" cx="232" cy="33" r="8"/>
-              <circle class="sess" style="--i:4" cx="258" cy="34" r="6"/><circle class="sess" style="--i:5" cx="300" cy="46" r="5"/>
-              <circle class="sess" style="--i:6" cx="352" cy="80" r="4"/><circle class="sess" style="--i:7" cx="390" cy="128" r="4"/>
-            </g>
-            <g class="sunball"><circle r="22" fill="var(--peach)" opacity=".25"/><circle r="14" fill="var(--peach)"/></g>
-            <text x="40" y="206" font-size="11" fill="var(--ink-soft)" font-family="Inter">4 am</text>
-            <text x="222" y="206" font-size="11" fill="var(--ink-soft)" font-family="Inter">noon</text>
-            <text x="394" y="206" font-size="11" fill="var(--ink-soft)" font-family="Inter">night</text>
-          </svg>
-          <div class="sun-cap"><b>Your focus lands around 10:30</b><span class="muted">Your best hour, from 42 Keeps</span></div>
+          <div class="sun-grid">
+            <svg viewBox="0 0 300 300" aria-hidden="true">
+              <defs>
+                <linearGradient id="dayNight" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="var(--peach)" stop-opacity=".32"/>
+                  <stop offset=".5" stop-color="var(--sage)" stop-opacity=".18"/>
+                  <stop offset="1" stop-color="var(--primary-dark)" stop-opacity=".30"/>
+                </linearGradient>
+                <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+                  <stop offset=".68" stop-color="var(--peach)" stop-opacity=".0"/>
+                  <stop offset=".8" stop-color="var(--peach)" stop-opacity=".16"/>
+                  <stop offset="1" stop-color="var(--peach)" stop-opacity="0"/>
+                </radialGradient>
+              </defs>
+              <circle cx="150" cy="150" r="146" fill="url(#glow)"/>
+              <circle cx="150" cy="150" r="104" fill="url(#dayNight)"/>
+              <circle cx="150" cy="150" r="104" fill="none" stroke="var(--border)" stroke-width="2"/>
+              <line x1="150" y1="40" x2="150" y2="260" stroke="var(--border)" stroke-width="1" stroke-dasharray="2 5"/>
+              <line x1="40" y1="150" x2="260" y2="150" stroke="var(--border)" stroke-width="1" stroke-dasharray="2 5"/>
+              <g fill="var(--primary)"><circle class="sess" style="--i:0" cx="68.7" cy="139.3" r="4.7"/><circle class="sess" style="--i:1" cx="72.4" cy="123.6" r="5.3"/><circle class="sess" style="--i:2" cx="84.9" cy="100.1" r="6.3"/><circle class="sess" style="--i:3" cx="95.9" cy="88.3" r="7.3"/><circle class="sess" style="--i:4" cx="109.0" cy="79.0" r="8.0"/><circle class="sess" style="--i:5" cx="118.6" cy="74.2" r="8.7"/><circle class="sess" style="--i:6" cx="128.8" cy="70.8" r="7.3"/><circle class="sess" style="--i:7" cx="144.6" cy="68.2" r="6.0"/><circle class="sess" style="--i:8" cx="181.4" cy="74.2" r="5.0"/><circle class="sess" style="--i:9" cx="208.0" cy="92.0" r="5.3"/><circle class="sess" style="--i:10" cx="225.8" cy="118.6" r="4.3"/><circle class="sess" style="--i:11" cx="208.0" cy="208.0" r="5.0"/><circle class="sess" style="--i:12" cx="181.4" cy="225.8" r="4.3"/></g>
+              <g class="sunball"><circle r="20" fill="var(--peach)" opacity=".28"/><circle r="12" fill="var(--peach)"/></g>
+              <text x="150" y="26" text-anchor="middle" font-size="11" fill="var(--ink-soft)" font-family="Inter">noon</text>
+              <text x="150" y="284" text-anchor="middle" font-size="11" fill="var(--ink-soft)" font-family="Inter">midnight</text>
+              <text x="30" y="154" text-anchor="end" font-size="11" fill="var(--ink-soft)" font-family="Inter">6am</text>
+              <text x="270" y="154" text-anchor="start" font-size="11" fill="var(--ink-soft)" font-family="Inter">6pm</text>
+            </svg>
+            <div>
+              <h3>Where the Sun Falls</h3>
+              <p>Your whole day as one circle: daylight on top, night below. Every session lands where it happened, bigger for longer &mdash; and the sun settles where your focus tends to fall.</p>
+              <div class="sun-cap"><b>Your focus lands around 10:30</b><span class="muted">From 42 Keeps this month &middot; your best hour</span></div>
+            </div>
+          </div>
         </div>
 
         <div class="tile b-jar reveal">
@@ -651,6 +728,30 @@
   if (sky) {
     var tones = ['var(--m-calm)','var(--m-happy)','var(--m-calm)','var(--m-neutral)','var(--m-excited)','var(--m-calm)','var(--m-tired)','var(--m-happy)','var(--m-calm)','var(--m-anxious)','var(--m-calm)','var(--m-happy)','var(--m-neutral)','var(--m-calm)','var(--m-happy)','var(--m-calm)','var(--m-sad)','var(--m-calm)','var(--m-happy)','var(--m-excited)','var(--m-calm)','var(--m-neutral)','var(--m-calm)','var(--m-happy)','var(--m-calm)','var(--m-tired)','var(--m-calm)','var(--m-happy)'];
     sky.innerHTML = tones.map(function (t, k) { return '<i style="background:linear-gradient(160deg,' + t + ',color-mix(in srgb,' + t + ' 55%,var(--surface)));--i:' + k + '"></i>'; }).join('');
+  }
+
+  // ── Promises & Tags: cycle through Aria's tags ──
+  var board = document.getElementById('board');
+  var insight = document.getElementById('insight');
+  var tagBtns = board ? board.querySelectorAll('.tg') : [];
+  var lines = {
+    morning: 'Her best Keeps happen before 9 &mdash; for both promises.',
+    maya: 'Everything she does with Maya, running or Spanish, in one tap.',
+    deep: 'The heavy lifting: the Keeps that needed her full, quiet attention.'
+  };
+  var order = ['morning', 'maya', 'deep'], ti = -1, tagTimer = null;
+  function setTag(t) {
+    if (!board) return;
+    board.setAttribute('data-tag', t);
+    tagBtns.forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.tag === t ? 'true' : 'false'); });
+    if (insight) insight.innerHTML = lines[t];
+  }
+  function cycleTags() { ti = (ti + 1) % order.length; setTag(order[ti]); }
+  tagBtns.forEach(function (b) { b.addEventListener('click', function () { clearInterval(tagTimer); ti = order.indexOf(b.dataset.tag); setTag(b.dataset.tag); }); });
+  if (board && !reduce && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries, obs) {
+      entries.forEach(function (e) { if (e.isIntersecting) { setTimeout(cycleTags, 900); tagTimer = setInterval(cycleTags, 3600); obs.disconnect(); } });
+    }, { threshold: 0.4 }).observe(board);
   }
 
   // ── Reveal on scroll ──
