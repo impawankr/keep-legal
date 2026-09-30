@@ -3,12 +3,13 @@
 Static Privacy Policy and Terms of Use for the keep. app, ready to publish
 on GitHub Pages.
 
-- `index.html` — keepomo.com home page (minimal placeholder until launch)
+- `index.html` — keepomo.com landing page (the ritual, what's free vs keep.+, privacy, App Store link)
+- `panda.png`, `panda-dark.png`, `app-icon.png`, `apple-touch-icon.png`, `favicon.png` — images for the site, exported from the app's assets
 - `legal.html` — index of the legal documents
 - `support.html` — Support page
 - `app.html` — keepomo.com/app, the download link on shared cards (iPhone goes straight to the App Store)
-- `privacy.html` — Privacy Policy (version 2026-09-29)
-- `terms.html` — Terms of Use (version 2026-09-29)
+- `privacy.html` — Privacy Policy (version 2026-09-30)
+- `terms.html` — Terms of Use (version 2026-09-30)
 - `_src/` — the body text and shared stylesheet the pages were built from
 - `.nojekyll` — tells GitHub Pages to serve the files as-is
 
@@ -48,7 +49,7 @@ The pages link to each other with relative paths, so they work at any URL.
 
 ## Updating
 
-Both documents carry a version string (`2026-09-29`) that matches
+Both documents carry a version string (`2026-09-30`) that matches
 `POLICY_VERSION` in the app. The consent ledger records that string against
 every grant, so **if you change either document materially, bump the version
 in both places** — otherwise the ledger claims people agreed to text they

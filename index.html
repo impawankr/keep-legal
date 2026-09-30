@@ -3,48 +3,291 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>keep.</title>
-<meta name="description" content="keep. — coming soon to iPhone.">
+<title>keep. — one thing, fully</title>
+<meta name="description" content="keep. is a quiet focus and reflection app for iPhone. Write down one thing, give it your full attention, then write down how it went.">
+<meta property="og:title" content="keep. — one thing, fully">
+<meta property="og:description" content="Write down one thing, give it your full attention, then write down how it went.">
+<meta property="og:url" content="https://keepomo.com/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://keepomo.com/app-icon.png">
+<meta name="apple-itunes-app" content="app-id=6812776268">
 <meta name="theme-color" content="#F7F1E5" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#1C1E1B" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Literata:ital,wght@0,400;1,400&family=Poppins:wght@600&display=swap">
 <style>
-  :root { --bg: #F7F1E5; --ink: #292A25; --ink-soft: #716F66; --border: #DED4C2; --primary: #63785A; }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) { --bg: #1C1E1B; --ink: #E8E6DF; --ink-soft: #A09C92; --border: #3A3E38; --primary: #9FB292; }
+  :root {
+    --bg: #F7F1E5; --surface: #FFF9EE; --surface-alt: #F1E6D2;
+    --ink: #292A25; --ink-soft: #716F66; --border: #DED4C2; --rule: #E9DFCC;
+    --primary: #63785A; --primary-dark: #3F5140; --peach: #EFA68D; --peach-soft: rgba(239,166,141,.18);
+    --sage: #AAB79A; --on-primary: #FFFDF7;
+    --shadow: 0 1px 2px rgba(63,81,64,.06), 0 12px 32px rgba(63,81,64,.10);
   }
-  :root[data-theme="dark"] { --bg: #1C1E1B; --ink: #E8E6DF; --ink-soft: #A09C92; --border: #3A3E38; --primary: #9FB292; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1C1E1B; --surface: #242723; --surface-alt: #2C302B;
+      --ink: #E8E6DF; --ink-soft: #A09C92; --border: #3A3E38; --rule: #33372F;
+      --primary: #9FB292; --primary-dark: #C3D2B8; --peach: #E0A088; --peach-soft: rgba(224,160,136,.16);
+      --sage: #7F8F74; --on-primary: #1C1E1B;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 12px 32px rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #1C1E1B; --surface: #242723; --surface-alt: #2C302B;
+    --ink: #E8E6DF; --ink-soft: #A09C92; --border: #3A3E38; --rule: #33372F;
+    --primary: #9FB292; --primary-dark: #C3D2B8; --peach: #E0A088; --peach-soft: rgba(224,160,136,.16);
+    --sage: #7F8F74; --on-primary: #1C1E1B;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 12px 32px rgba(0,0,0,.35);
+  }
   * { box-sizing: border-box; }
-  html, body { height: 100%; }
+  html { scroll-behavior: smooth; }
   body {
     margin: 0; background: var(--bg); color: var(--ink);
     font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    -webkit-font-smoothing: antialiased;
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    padding: 24px 16px; text-align: center;
+    font-size: 16.5px; line-height: 1.6; -webkit-font-smoothing: antialiased;
   }
-  main { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-  h1 { font-family: Poppins, sans-serif; font-weight: 600; font-size: clamp(56px, 12vw, 88px); letter-spacing: -0.03em; margin: 0; line-height: 1; }
-  h1 span { color: var(--primary); }
-  p { margin: 16px 0 0; font-size: 17px; color: var(--ink-soft); }
-  footer { font-size: 14px; color: var(--ink-soft); display: flex; flex-wrap: wrap; gap: 8px 20px; justify-content: center; }
-  footer a { color: var(--ink-soft); text-decoration: none; }
-  footer a:hover, footer a:focus-visible { color: var(--ink); }
-  a:focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; border-radius: 4px; }
+  a { color: var(--primary-dark); text-underline-offset: 3px; }
+  a:focus-visible, .btn:focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; border-radius: 6px; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+
+  /* header */
+  header.site { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-bottom: 1px solid transparent; }
+  .bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 0; }
+  .wordmark { font-family: Poppins, sans-serif; font-weight: 600; font-size: 22px; letter-spacing: -0.02em; color: var(--ink); text-decoration: none; }
+  .wordmark span, .dot { color: var(--primary); }
+  nav { display: flex; gap: 20px; }
+  nav a { font-size: 14.5px; color: var(--ink-soft); text-decoration: none; }
+  nav a:hover { color: var(--ink); }
+
+  /* hero */
+  .hero { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 48px; align-items: center; padding-top: 56px; padding-bottom: 72px; }
+  .eyebrow { font-size: 12.5px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--primary); margin: 0 0 18px; }
+  h1 { font-family: Poppins, sans-serif; font-weight: 600; font-size: clamp(44px, 7vw, 72px); line-height: 1.02; letter-spacing: -0.035em; margin: 0; text-wrap: balance; }
+  h1 em { font-family: Literata, Georgia, serif; font-style: italic; font-weight: 400; letter-spacing: -0.02em; color: var(--primary-dark); }
+  .lede { font-size: 18.5px; color: var(--ink-soft); margin: 22px 0 0; max-width: 34ch; }
+  .cta { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 18px; margin-top: 32px; }
+  .btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 22px; border-radius: 999px; background: var(--primary); color: var(--on-primary); font-weight: 500; font-size: 16px; text-decoration: none; box-shadow: 0 6px 18px rgba(63,81,64,.22); transition: transform .15s ease, box-shadow .15s ease; }
+  .btn:hover { transform: translateY(-1px); box-shadow: 0 10px 24px rgba(63,81,64,.26); }
+  .btn svg { width: 17px; height: 17px; }
+  .cta-note { font-size: 14px; color: var(--ink-soft); }
+
+  /* the paper card */
+  .stage { position: relative; display: flex; justify-content: center; }
+  .card { position: relative; width: min(100%, 380px); background: var(--surface); border: 1px solid var(--border); border-radius: 9px; box-shadow: var(--shadow); padding: 22px 22px 18px; transform: rotate(-1.5deg); }
+  .card-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+  .chip { font-size: 12px; font-weight: 500; padding: 4px 11px; border-radius: 999px; background: var(--surface-alt); color: var(--primary-dark); border: 1px solid var(--border); }
+  .chip.peach { background: var(--peach-soft); border-color: transparent; color: var(--ink); }
+  .ruled { font-family: Literata, Georgia, serif; font-size: 19px; line-height: 34px; color: var(--ink); min-height: 136px; background-image: repeating-linear-gradient(180deg, transparent 0 33px, var(--rule) 33px 34px); padding: 0 2px; }
+  .ruled .spark { color: var(--primary); font-style: normal; margin-right: 8px; }
+  .card-foot { display: flex; align-items: center; gap: 10px; margin-top: 16px; }
+  .time { font-size: 13px; font-weight: 500; padding: 7px 12px; border-radius: 999px; border: 1px solid var(--border); color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+  .give { margin-left: auto; font-size: 13.5px; font-weight: 500; padding: 8px 16px; border-radius: 999px; background: var(--primary); color: var(--on-primary); }
+  .panda { position: absolute; width: 132px; height: 132px; right: max(-8px, calc(50% - 250px)); top: -64px; transform: rotate(6deg); filter: drop-shadow(0 8px 14px rgba(63,81,64,.18)); }
+  .panda img { width: 100%; height: 100%; }
+
+  /* sections */
+  section { padding: 72px 0; border-top: 1px solid var(--border); }
+  h2 { font-family: Poppins, sans-serif; font-weight: 600; font-size: clamp(28px, 4vw, 38px); line-height: 1.12; letter-spacing: -0.025em; margin: 0 0 14px; text-wrap: balance; }
+  .intro { color: var(--ink-soft); font-size: 17.5px; max-width: 58ch; margin: 0 0 40px; }
+
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; counter-reset: step; list-style: none; padding: 0; margin: 0; }
+  .steps li { background: var(--surface); border: 1px solid var(--border); border-radius: 9px; padding: 20px 18px 22px; }
+  .steps .n { font-family: Literata, Georgia, serif; font-style: italic; font-size: 15px; color: var(--primary); }
+  .steps h3 { font-family: Poppins, sans-serif; font-weight: 600; font-size: 17px; margin: 6px 0 6px; }
+  .steps p { margin: 0; font-size: 15px; color: var(--ink-soft); }
+
+  .grow { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .tile { background: var(--surface); border: 1px solid var(--border); border-radius: 9px; padding: 24px; }
+  .tile h3 { font-family: Poppins, sans-serif; font-weight: 600; font-size: 18px; margin: 0 0 4px; display: flex; align-items: center; gap: 10px; }
+  .tile .sub { color: var(--ink-soft); font-size: 14.5px; margin: 0 0 16px; }
+  .tile ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+  .tile li { display: grid; grid-template-columns: 18px 1fr; gap: 10px; font-size: 15.5px; }
+  .tile li::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--primary); margin-top: 8px; justify-self: center; }
+  .tile.plus li::before { background: var(--peach); }
+  .tile li span { color: var(--ink-soft); }
+  .badge { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; padding: 3px 9px; border-radius: 999px; background: var(--surface-alt); color: var(--primary-dark); }
+  .tile.plus .badge { background: var(--peach-soft); color: var(--ink); }
+  .map { display: grid; grid-template-columns: repeat(13, 1fr); grid-auto-flow: column; grid-template-rows: repeat(7, 1fr); gap: 4px; margin-top: 22px; max-width: 300px; }
+  .map i { aspect-ratio: 1; border-radius: 50%; background: var(--surface-alt); }
+  .map i.a { background: color-mix(in srgb, var(--primary) 34%, transparent); }
+  .map i.b { background: color-mix(in srgb, var(--primary) 64%, transparent); }
+  .map i.c { background: var(--primary); }
+  .map i.t { box-shadow: 0 0 0 1.5px var(--surface), 0 0 0 3px var(--primary-dark); }
+
+  .promise { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .promise h3 { font-family: Poppins, sans-serif; font-weight: 600; font-size: 17px; margin: 0 0 6px; }
+  .promise p { margin: 0; color: var(--ink-soft); font-size: 15.5px; }
+  .more { margin-top: 32px; font-size: 15px; }
+
+  .closing { text-align: center; padding: 88px 0 96px; }
+  .closing h2 { margin-bottom: 10px; }
+  .closing p { color: var(--ink-soft); margin: 0 auto; max-width: 44ch; }
+  .closing .cta { justify-content: center; }
+
+  footer.site { border-top: 1px solid var(--border); padding: 28px 0 56px; color: var(--ink-soft); font-size: 14px; }
+  .foot { display: flex; flex-wrap: wrap; gap: 10px 24px; justify-content: space-between; align-items: center; }
+  .foot nav { gap: 18px; flex-wrap: wrap; }
+
+  @media (max-width: 860px) {
+    .hero { grid-template-columns: 1fr; gap: 72px; padding-top: 36px; padding-bottom: 64px; }
+    .stage { order: 2; }
+    .steps { grid-template-columns: 1fr 1fr; }
+    .grow, .promise { grid-template-columns: 1fr; }
+    .panda { right: 4px; }
+  }
+  @media (max-width: 480px) {
+    nav.top a:not(:last-child) { display: none; }
+    .steps { grid-template-columns: 1fr; }
+    .panda { width: 104px; height: 104px; top: -52px; }
+    section { padding: 56px 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .btn { transition: none; }
+  }
 </style>
 </head>
 <body>
+<header class="site">
+  <div class="wrap bar">
+    <a class="wordmark" href="./">keep<span>.</span></a>
+    <nav class="top" aria-label="Site">
+      <a href="#how">How it works</a>
+      <a href="#privacy">Privacy</a>
+      <a href="support.html">Support</a>
+    </nav>
+  </div>
+</header>
+
 <main>
-  <h1>keep<span>.</span></h1>
-  <p>Coming soon to iPhone.</p>
+  <div class="wrap hero">
+    <div>
+      <p class="eyebrow">A focus ritual for iPhone</p>
+      <h1>One thing,<br><em>fully</em><span class="dot">.</span></h1>
+      <p class="lede">Write down what you&rsquo;re about to do. Give it your full attention. Then write two lines about how it went &mdash; and watch small steps add up to the promises you keep to yourself.</p>
+      <div class="cta">
+        <a class="btn" href="https://apps.apple.com/app/id6812776268">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.37 12.6c-.02-2.2 1.8-3.26 1.88-3.31-1.02-1.5-2.62-1.7-3.19-1.72-1.36-.14-2.65.8-3.34.8-.69 0-1.75-.78-2.88-.76-1.48.02-2.85.86-3.61 2.19-1.54 2.67-.39 6.62 1.1 8.79.73 1.06 1.6 2.25 2.74 2.2 1.1-.04 1.52-.71 2.85-.71 1.33 0 1.7.71 2.87.69 1.19-.02 1.94-1.08 2.66-2.14.84-1.23 1.19-2.42 1.2-2.48-.03-.01-2.3-.88-2.33-3.5zM14.18 6.13c.6-.73 1.01-1.75.9-2.76-.87.04-1.92.58-2.54 1.31-.56.64-1.05 1.68-.92 2.67.97.08 1.96-.49 2.56-1.22z"/></svg>
+          Get keep. on the App Store
+        </a>
+        <span class="cta-note">Free on iPhone &middot; keep.+ is optional</span>
+      </div>
+    </div>
+
+    <div class="stage" aria-hidden="true">
+      <div class="card">
+        <div class="panda"><picture><source srcset="panda-dark.png" media="(prefers-color-scheme: dark)"><img src="panda.png" alt=""></picture></div>
+        <div class="card-top">
+          <span class="chip">Learn Spanish</span>
+        </div>
+        <div class="ruled">
+          Finish the chapter on the past tense<br>
+          <span class="spark">✦</span>twenty flashcards<br>
+          <span class="spark">✦</span>one voice note to Maya
+        </div>
+        <div class="card-foot">
+          <span class="time">25 min</span>
+          <span class="give">Give it to Panda</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="how">
+    <div class="wrap">
+      <h2>A small ritual, every day</h2>
+      <p class="intro">No streak pressure, no feed, no noise. Four quiet steps, in the same order each time, so starting gets easier than putting it off.</p>
+      <ol class="steps">
+        <li><span class="n">first</span><h3>Check in</h3><p>Pick how you&rsquo;re feeling, in a tap. A line about why, if you like.</p></li>
+        <li><span class="n">then</span><h3>Write a Keep</h3><p>One thing you&rsquo;ll do now, filed under a promise you&rsquo;re keeping to yourself.</p></li>
+        <li><span class="n">then</span><h3>Focus</h3><p>Hand it to Panda and put the phone down. A calm paper timer counts the minutes.</p></li>
+        <li><span class="n">last</span><h3>Reflect</h3><p>What got done, what&rsquo;s left. Panda reads it back to you, kindly.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="grow">
+    <div class="wrap">
+      <h2>Watch it add up</h2>
+      <p class="intro">Every Keep is a step. Over weeks they become a picture of when you focus best, where your time really goes, and how your days have felt.</p>
+      <div class="grow">
+        <div class="tile">
+          <h3>Free, always <span class="badge">keep.</span></h3>
+          <p class="sub">Everything you need for the daily ritual.</p>
+          <ul>
+            <li><div>Check-ins, Keeps, the focus timer and reflections</div></li>
+            <li><div>Panda Box <span>&mdash; every Keep, searchable by promise and tag</span></div></li>
+            <li><div>The Horizon <span>&mdash; from the big picture down to today</span></div></li>
+            <li><div>Your last three months, day by day</div></li>
+            <li><div>Works offline, syncs across your devices</div></li>
+          </ul>
+          <div class="map" aria-hidden="true">
+            <i></i><i class="a"></i><i></i><i class="b"></i><i class="a"></i><i></i><i></i>
+            <i class="a"></i><i class="b"></i><i class="c"></i><i></i><i class="a"></i><i></i><i></i>
+            <i class="b"></i><i class="c"></i><i class="a"></i><i class="b"></i><i></i><i class="a"></i><i></i>
+            <i class="c"></i><i class="b"></i><i class="c"></i><i class="a"></i><i class="b"></i><i></i><i class="a"></i>
+            <i class="a"></i><i></i><i class="b"></i><i class="c"></i><i class="c"></i><i class="a"></i><i></i>
+            <i class="b"></i><i class="c"></i><i class="c"></i><i class="b"></i><i class="a"></i><i></i><i class="b"></i>
+            <i class="c"></i><i class="b"></i><i class="a"></i><i class="c"></i><i class="b"></i><i class="a"></i><i></i>
+            <i class="b"></i><i class="c"></i><i class="c"></i><i class="b"></i><i class="c"></i><i></i><i class="a"></i>
+            <i class="c"></i><i class="c"></i><i class="b"></i><i class="c"></i><i class="a"></i><i class="b"></i><i></i>
+            <i class="b"></i><i class="c"></i><i class="c"></i><i class="c"></i><i class="b"></i><i class="a"></i><i class="b"></i>
+            <i class="c"></i><i class="b"></i><i class="c"></i><i class="c"></i><i class="c"></i><i></i><i class="a"></i>
+            <i class="c"></i><i class="c"></i><i class="b"></i><i class="c"></i><i class="b"></i><i class="a"></i><i class="b"></i>
+            <i class="c"></i><i class="c t"></i>
+          </div>
+        </div>
+        <div class="tile plus">
+          <h3>keep.+ <span class="badge">optional</span></h3>
+          <p class="sub">Panda&rsquo;s fuller read of your days, monthly or yearly.</p>
+          <ul>
+            <li><div>Where the Sun Falls <span>&mdash; the hour your focus tends to land</span></div></li>
+            <li><div>Your mood jar and Mood Weather <span>&mdash; a month of check-ins at a glance</span></div></li>
+            <li><div>Promise Journeys <span>&mdash; each promise as a road, every Keep a step</span></div></li>
+            <li><div>By promise <span>&mdash; where your time really goes</span></div></li>
+            <li><div>Echoes <span>&mdash; a note from another day, handed back to you</span></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="privacy">
+    <div class="wrap">
+      <h2>What you write stays yours</h2>
+      <p class="intro">keep. holds the most personal thing an app can: what you meant to do, and how it really went. It is treated that way.</p>
+      <div class="promise">
+        <div><h3>No ads, no trackers</h3><p>No advertising identifiers, no data brokers, nothing sold. Ever.</p></div>
+        <div><h3>Analytics off by default</h3><p>Usage analytics only run if you switch them on &mdash; and never carry a word you wrote.</p></div>
+        <div><h3>Take it, or delete it</h3><p>Export everything as JSON and CSV, or delete your account, straight from Settings.</p></div>
+      </div>
+      <p class="more"><a href="privacy.html">Read the Privacy Policy</a> &mdash; written to be read.</p>
+    </div>
+  </section>
+
+  <section class="closing">
+    <div class="wrap">
+      <h2>Start with one thing.</h2>
+      <p>Then another, tomorrow. That&rsquo;s the whole idea.</p>
+      <div class="cta">
+        <a class="btn" href="https://apps.apple.com/app/id6812776268">Get keep. on the App Store</a>
+      </div>
+    </div>
+  </section>
 </main>
-<footer>
-  <a href="privacy.html">Privacy</a>
-  <a href="terms.html">Terms</a>
-  <a href="support.html">Support</a>
-  <a href="mailto:support@keepomo.com">support@keepomo.com</a>
+
+<footer class="site">
+  <div class="wrap foot">
+    <span>&copy; 2026 keep. &middot; <a href="mailto:support@keepomo.com">support@keepomo.com</a></span>
+    <nav aria-label="Legal">
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="support.html">Support</a>
+    </nav>
+  </div>
 </footer>
 </body>
 </html>
